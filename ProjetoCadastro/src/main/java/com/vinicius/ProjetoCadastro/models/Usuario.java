@@ -12,7 +12,7 @@ import jakarta.validation.constraints.Size;
 
 
 @Entity
-public class Usuarios {
+public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,6 +21,8 @@ public class Usuarios {
     private String email;
     @NotNull
     private String senha;
+    @NotNull
+    private String nomeUsuario;
 
 
     public Long getId() {
@@ -45,6 +47,13 @@ public class Usuarios {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+    public String getNomeUsuario() {
+        return this.nomeUsuario;
+    }
+
+    public void setNomeUsuario(String nomeUsuario) {
+        this.nomeUsuario = nomeUsuario;
     }
 
 

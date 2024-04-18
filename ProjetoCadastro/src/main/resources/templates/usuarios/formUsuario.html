@@ -1,1 +1,43 @@
-test
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+  <main>
+    <div>
+        <div>
+            <h1>Bem Vindo!</h1>
+            <p>Para continuar conectado conosco</p>
+            <p>por favor realize seu login com suas informações pessoais!</p>
+            <a href="#">Login</a>
+        </div>
+        <div>
+            <form method="post" action="/cadastrarUsuario">
+                <div>
+                    <h1>Criar Conta</h1>
+                    <p>Use seu email para registro</p>
+                </div>
+                <div>
+                    <div>
+                        <input type="text" name="nome" id="idNome">
+                    </div>
+                    <div>
+                        <input type="text" name="email" id="idEmail">
+                    </div>
+                    <div>
+                        <input type="password" name="senha" id="idSenha">
+                    </div>
+                    <div>
+                        <input type="submit" value="Cadastrar">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+  </main>
+    
+</body>
+</html>

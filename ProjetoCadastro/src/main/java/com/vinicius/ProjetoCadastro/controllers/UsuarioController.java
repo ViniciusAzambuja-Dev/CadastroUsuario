@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 
-import com.vinicius.ProjetoCadastro.models.Usuarios;
+import com.vinicius.ProjetoCadastro.models.Usuario;
 import com.vinicius.ProjetoCadastro.repository.UsuariosRepository;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,7 +25,7 @@ public class UsuarioController {
     }
     
     @RequestMapping(value = "/cadastrarUsuario", method=RequestMethod.POST)
-    public String form(@Validated Usuarios usuario, BindingResult result, RedirectAttributes attributes ) {
+    public String form(@Validated Usuario usuario, BindingResult result, RedirectAttributes attributes ) {
         if(result.hasErrors()){
            // attributes.addFlashAttribute("mensagem", "Verifique os campos...");
             return "redirect:/cadastrarUsuario";

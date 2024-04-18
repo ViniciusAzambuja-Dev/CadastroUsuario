@@ -2,13 +2,13 @@ package com.vinicius.ProjetoCadastro.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.vinicius.ProjetoCadastro.models.Usuarios;
+import com.vinicius.ProjetoCadastro.models.Usuario;
 import java.util.List;
 import java.util.Optional;
 
 
-public interface UsuariosRepository extends CrudRepository<Usuarios, Long>{
-    List<Usuarios> findByEmail(String email);
-    Optional<Usuarios> findById(Long id);
+public interface UsuariosRepository extends CrudRepository<Usuario, Long>{
+    List<Usuario> findByEmail(String email);
+    Optional<Usuario> findById(Long id);
     
 } 
