@@ -8,7 +8,7 @@ import java.util.Optional;
 
 
 public interface UsuariosRepository extends CrudRepository<Usuario, Long>{
-    List<Usuario> findByEmail(String email);
+    List<Usuario> findByNomeUsuario(String nomeUsuario);
     Optional<Usuario> findById(Long id);
     
 } 

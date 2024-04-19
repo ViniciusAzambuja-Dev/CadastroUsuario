@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css');
 *{
     padding: 0;
     margin: 0;
@@ -12,10 +12,13 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: grey;
+    background-color: rgb(214, 214, 214);
 }
 main{
     width: 55%;
+}
+a{
+    text-decoration: none;
 }
 .containerPaiForm{
     display: flex;
@@ -62,4 +65,76 @@ main{
 #marginLinkLogin{
     margin-top: 15px;
 }
+.divFilhoLinkLogin{
+    width: 50%;  
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: white;
+    border-radius: 15px;
+    padding: 3px;
+    cursor: pointer;
+}
+.divPaiLinkLogin{
+    display:flex;
+    justify-content: center;
+    
+}
+.linkLogin{
+    color: white;
+    font-weight: 300;
+    font-size: 12px;
+    text-transform: uppercase;
+}
 
+.containerForm h1{
+    font-weight: 700;
+    font-size: 28px;
+    color: #58af9b;
+}
+.containerForm p{
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    margin-top: 12px;
+}
+.containerForm input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+.divInputPai{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.divInputFilho{
+    display: flex;
+    width: 48%;
+    background-color: rgb(216, 216, 216);
+    padding: 5px;
+    margin-top: 12px;
+}
+.mdi-account, .mdi-email, .mdi-lock{
+  display: flex;
+  align-items: center;
+  color: rgb(104, 104, 104);
+  margin: 4px;
+}
+::placeholder{
+    font-size: 12.5px;
+    font-weight: 400;
+}
+.divFilhoInputCadastrar{
+  background-color: #58af9b;
+  padding: 5px 15px;
+  border-radius: 18px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.divFilhoInputCadastrar input{
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px;
+    cursor: pointer;
+}

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
     <link rel="stylesheet" href="assets/css/form.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
   <main>
@@ -14,27 +15,37 @@
             <p id="marginPrimeiroParagrafo">Para continuar conectado conosco</p>
             <p class="marginParagrafo">por favor realize seu login com as suas</p> 
             <p class="marginParagrafo">informações pessoais!</p>
-            <a href="#" id="marginLinkLogin">Login</a>
+            <div class="divPaiLinkLogin">
+                <div class="divFilhoLinkLogin" id="marginLinkLogin">
+                    <a href="#" class="linkLogin">Login</a>
+                </div>
+            </div>
         </div>
+
         <div class="containerForm">
             <form method="post" action="/cadastrarUsuario">
                 <div>
                     <h1>Criar Conta</h1>
                     <p>Use seu email para registro</p>
                 </div>
-                <div>
-                    <div>
-                        <input type="text" name="nome" id="idNome">
+                <div class="divInputPai">
+                 
+                    <div class="divInputFilho">
+                        <span class="mdi mdi-account"></span>
+                        <input type="text" name="nome" id="idNome" placeholder="Nome">
                     </div>
-                    <div>
-                        <input type="text" name="email" id="idEmail">
+             
+                    <div class="divInputFilho">
+                        <span class="mdi mdi-email"></span>
+                        <input type="text" name="email" id="idEmail" placeholder="Email">
                     </div>
-                    <div>
-                        <input type="password" name="senha" id="idSenha">
+                    <div class="divInputFilho">
+                        <span class="mdi mdi-lock"></span>
+                        <input type="password" name="senha" id="idSenha" placeholder="Senha">
                     </div>
-                    <div>
-                        <input type="submit" value="Cadastrar">
-                    </div>
+                        <div class="divFilhoInputCadastrar">
+                            <input type="submit" value="Cadastrar">
+                        </div>
                 </div>
             </form>
         </div>
