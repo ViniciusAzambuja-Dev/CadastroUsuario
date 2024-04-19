@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Montserrat;
+    font-weight: 300;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+}
+main{
+    width: 55%;
+}
+.containerPaiForm{
+    display: flex;
+    height: 390px;
+    width: 100%;
+}
+.containerBemVindo{
+    flex: 42%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0px 40px;
+    background-color: #58af9b;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    
+}
+.containerForm{
+    flex: 58%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.containerBemVindo h1{
+    color: white;
+    font-weight: 500;
+    font-size: 25px;
+}
+.containerBemVindo p{
+    color: white;
+    font-size: 12px;
+}
+#marginPrimeiroParagrafo{
+    margin-top: 5px;
+}
+.marginSegundoParagrafo{
+    margin-top: 2px;
+}
+#marginLinkLogin{
+    margin-top: 15px;
+}
+
