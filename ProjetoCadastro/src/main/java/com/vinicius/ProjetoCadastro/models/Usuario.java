@@ -1,13 +1,12 @@
 package com.vinicius.ProjetoCadastro.models;
 
-import org.antlr.v4.runtime.misc.NotNull;
-
-import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 
@@ -16,13 +15,16 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotNull
     @Email
+    @Pattern(regexp = "^(?=.*@(hotmail\\.com|gmail\\.com))\\S+$", message = "ERRO, o endereço de e-mail deve ser do tipo gmail.com ou hotmail.com")
+    @NotBlank
     private String email;
-    @NotNull
+    @NotBlank
+    @Pattern(regexp = "^[A-Z]+(.)*", message = "ERRO, o nome deve começar com letra maiúscula!")
+    private String nome;
+    @NotBlank
     private String senha;
-    @NotNull
-    private String nomeUsuario;
+   
 
 
     public Long getId() {
@@ -48,12 +50,12 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    public String getNomeUsuario() {
-        return this.nomeUsuario;
+    public String getNome() {
+        return this.nome;
     }
 
-    public void setNomeUsuario(String nomeUsuario) {
-        this.nomeUsuario = nomeUsuario;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
 

@@ -8,7 +8,6 @@ import com.vinicius.ProjetoCadastro.models.Usuario;
 import com.vinicius.ProjetoCadastro.repository.UsuariosRepository;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.validation.BindingResult;
 
@@ -18,22 +17,38 @@ public class UsuarioController {
     @Autowired
     private UsuariosRepository ur;
 
-    @RequestMapping(value = "/cadastrarUsuario", method=RequestMethod.GET)
+    @RequestMapping(value = "/", method=RequestMethod.GET)
     public String form() {
 
         return "usuarios/formUsuario";
     }
     
-    @RequestMapping(value = "/cadastrarUsuario", method=RequestMethod.POST)
-    public String form(@Validated Usuario usuario, BindingResult result, RedirectAttributes attributes ) {
+    @RequestMapping(value = "/", method=RequestMethod.POST)
+    public String form(@Validated Usuario usuario, BindingResult result, RedirectAttributes attributes) {
         if(result.hasErrors()){
-           // attributes.addFlashAttribute("mensagem", "Verifique os campos...");
-            return "redirect:/cadastrarUsuario";
+            //attributes.addFlashAttribute("mensagem", "Verifique os campos...");
+            System.out.print(result);
+            return "redirect:/";
         }
-
+        
+        if (ur.findByNome(usuario.getNome()).isPresent()) {
+            //mensagem de erro
+            System.out.print("ERRO, nome já existente");
+            return "redirect:/";
+        }
+        if (ur.findByEmail(usuario.getEmail()).isPresent()) {
+            //mensagem de erro
+            System.out.print("ERRO, email já existente");
+            return "redirect:/";
+        }
+        if (ur.findBySenha(usuario.getSenha()).isPresent()) {
+            //mensagem de erro
+            System.out.print("ERRO, senha já existente");
+            return "redirect:/";
+        }
         ur.save(usuario);
-        //attributes.addFlashAttribute("mensagem", "Pacote cadastrado com sucesso!");
-        return "redirect:/cadastrarUsuario";
+        System.out.print("Usuário cadastrado com sucesso!");
+        return "redirect:/";
     }
     
 }
