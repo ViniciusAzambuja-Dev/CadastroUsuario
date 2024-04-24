@@ -34,18 +34,26 @@
                         <span class="mdi mdi-account"></span>
                         <input type="text" name="nome" id="idNome" placeholder="Nome">
                     </div>
+                        <div th:if="${nomeError}" th:text="${nomeError}" style="color: red; font-size: 12px;"></div>
+                        <div th:if="${validacaoError}" th:text="${validacaoError}" style="color: red; font-size: 12px;"></div>
              
                     <div class="divInputFilho">
                         <span class="mdi mdi-email"></span>
                         <input type="text" name="email" id="idEmail" placeholder="Email">
                     </div>
+                        <div th:if="${emailError}" th:text="${emailError}" style="color: red; font-size: 12px;"></div>
+                        <div th:if="${validacaoError}" th:text="${validacaoError}" style="color: red; font-size: 12px;"></div>
+
                     <div class="divInputFilho">
                         <span class="mdi mdi-lock"></span>
                         <input type="password" name="senha" id="idSenha" placeholder="Senha">
                     </div>
-                        <div class="divFilhoInputCadastrar">
-                            <input type="submit" value="Cadastrar">
-                        </div>
+                        <div th:if="${senhaError}" th:text="${senhaError}" style="color: red; font-size: 12px;"></div>
+                        <div th:if="${validacaoError}" th:text="${validacaoError}" style="color: red; font-size: 12px;"></div>
+
+                    <div class="divFilhoInputCadastrar">
+                        <input type="submit" value="Cadastrar">
+                    </div>
                 </div>
             </form>
         </div>

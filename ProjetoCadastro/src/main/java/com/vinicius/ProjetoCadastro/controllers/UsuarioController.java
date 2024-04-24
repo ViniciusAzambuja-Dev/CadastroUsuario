@@ -26,24 +26,23 @@ public class UsuarioController {
     @RequestMapping(value = "/", method=RequestMethod.POST)
     public String form(@Validated Usuario usuario, BindingResult result, RedirectAttributes attributes) {
         if(result.hasErrors()){
-            //attributes.addFlashAttribute("mensagem", "Verifique os campos...");
-            System.out.print(result);
+            attributes.addFlashAttribute("validacaoError", "Verifique os campos...");
             return "redirect:/";
         }
         
         if (ur.findByNome(usuario.getNome()).isPresent()) {
             //mensagem de erro
-            System.out.print("ERRO, nome já existente");
+            attributes.addFlashAttribute("nomeError", "Nome já existente!");
             return "redirect:/";
         }
         if (ur.findByEmail(usuario.getEmail()).isPresent()) {
             //mensagem de erro
-            System.out.print("ERRO, email já existente");
+            attributes.addFlashAttribute("emailError", "Email já existente!");
             return "redirect:/";
         }
         if (ur.findBySenha(usuario.getSenha()).isPresent()) {
             //mensagem de erro
-            System.out.print("ERRO, senha já existente");
+            attributes.addFlashAttribute("senhaError", "Senha já existente!");
             return "redirect:/";
         }
         ur.save(usuario);
