@@ -27,10 +27,10 @@ public class LoginController {
     public String logar(Usuario usuarioParam, RedirectAttributes attributes){
         Usuario usuario = this.ur.validacaoLogin(usuarioParam.getEmail(), usuarioParam.getSenha());
         if(usuario != null){
-            
+
             return "/home";
-       
         }
+    
         attributes.addFlashAttribute("erroLogin", "Usuario não encontrado!");
         return "redirect:/Login";
     }

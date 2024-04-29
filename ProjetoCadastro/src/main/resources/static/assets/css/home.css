@@ -15,7 +15,7 @@ body{
     overflow: hidden;
 }
 h1{
-    background-image: linear-gradient(to bottom, rgb(185, 237, 247), rgb(151, 230, 216),
+    background-image: linear-gradient(to bottom, rgb(87, 168, 184), rgb(151, 230, 216),
      rgb(41, 192, 192));
     background-clip: text;
     color:transparent;

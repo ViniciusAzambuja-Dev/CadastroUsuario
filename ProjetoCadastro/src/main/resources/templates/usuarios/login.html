@@ -12,9 +12,8 @@
     <div class="containerPaiForm">
         <div class="containerBemVindo">
             <h1>Bem Vindo!</h1>
-            <p id="marginPrimeiroParagrafo">Não possui nenhum Cadastro?</p>
-            <p class="marginParagrafo">por favor realize seu cadastro com as suas</p> 
-            <p class="marginParagrafo">informações pessoais!</p>
+            <p id="marginPrimeiroParagrafo">Não possui Cadastro?</p>
+            <p class="marginParagrafo">Por favor realize seu cadastro com as suas informações pessoais!</p> 
             <div class="divPaiLinkCadastro">
                 <div class="divFilhoLinkCadastro" id="marginLinkCadastro">
                     <a href="/" class="linkCadastro">Cadastrar</a>
@@ -39,7 +38,7 @@
                         <span class="mdi mdi-lock"></span>
                         <input type="password" name="senha" id="idSenha" placeholder="Senha">
                     </div>
-                    <div th:if="${erroLogin}" th:text="${erroLogin}" style="font-size: 12px;"></div>
+                    <div th:if="${erroLogin}" th:text="${erroLogin}" style="color: red; font-size: 12px; margin-top: 5px;"></div>
                     <div class="divFilhoInputLogar">
                         <input type="submit" value="Entrar">
                     </div>
