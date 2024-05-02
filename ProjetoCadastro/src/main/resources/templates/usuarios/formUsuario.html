@@ -34,28 +34,27 @@
                         <span class="mdi mdi-account"></span>
                         <input type="text" name="nome" id="idNome" placeholder="Nome">
                     </div>
-                        <div th:if="${nomeError}" th:text="${nomeError}" style="color: red; font-size: 12px;"></div>
                         <div th:if="${validacaoError}" th:text="${validacaoError}" style="color: red; font-size: 12px;"></div>
              
                     <div class="divInputFilho">
                         <span class="mdi mdi-email"></span>
                         <input type="text" name="email" id="idEmail" placeholder="Email">
                     </div>
-                        <div th:if="${emailError}" th:text="${emailError}" style="color: red; font-size: 12px;"></div>
                         <div th:if="${validacaoError}" th:text="${validacaoError}" style="color: red; font-size: 12px;"></div>
 
                     <div class="divInputFilho">
                         <span class="mdi mdi-lock"></span>
                         <input type="password" name="senha" id="idSenha" placeholder="Senha">
                     </div>
-                        <div th:if="${senhaError}" th:text="${senhaError}" style="color: red; font-size: 12px;"></div>
-                        <div th:if="${validacaoError}" th:text="${validacaoError}" style="color: red; font-size: 12px;"></div>
+                        <div th:if="${validacaoError}" th:text="${validacaoError}" style="color: rgb(255, 0, 0); font-size: 12px;"></div>
 
                     <div class="divFilhoInputCadastrar">
                         <input type="submit" value="Cadastrar">
                     </div>
                 </div>
             </form>
+            <div th:if="${cadastroError}" th:text="${cadastroError}" style="color: red; font-size: 12px; margin-top: 5px;"></div>
+            <div th:if="${cadastrado}" th:text="${cadastrado}" style="color: rgb(255, 255, 255); font-size: 12px; background-color: rgb(52, 212, 52); margin-top: 5px; width: 100%; padding: 10px;"></div>
         </div>
     </div>
   </main>

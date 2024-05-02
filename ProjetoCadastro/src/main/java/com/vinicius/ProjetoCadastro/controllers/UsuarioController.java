@@ -30,23 +30,13 @@ public class UsuarioController {
             return "redirect:/";
         }
         
-        if (ur.findByNome(usuario.getNome()).isPresent()) {
+        if (ur.findByNome(usuario.getNome()).isPresent() || ur.findByEmail(usuario.getEmail()).isPresent() || ur.findBySenha(usuario.getSenha()).isPresent()) {
             //mensagem de erro
-            attributes.addFlashAttribute("nomeError", "Nome já existente!");
-            return "redirect:/";
-        }
-        if (ur.findByEmail(usuario.getEmail()).isPresent()) {
-            //mensagem de erro
-            attributes.addFlashAttribute("emailError", "Email já existente!");
-            return "redirect:/";
-        }
-        if (ur.findBySenha(usuario.getSenha()).isPresent()) {
-            //mensagem de erro
-            attributes.addFlashAttribute("senhaError", "Senha já existente!");
+            attributes.addFlashAttribute("cadastroError", "Usuário já existente!");
             return "redirect:/";
         }
         ur.save(usuario);
-        System.out.print("Usuário cadastrado com sucesso!");
+        attributes.addFlashAttribute("cadastrado", "Usuário cadastrado com sucesso!");
         return "redirect:/";
     }
     
