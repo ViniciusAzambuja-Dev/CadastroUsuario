@@ -2,8 +2,6 @@ package com.vinicius.ProjetoCadastro.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.annotation.Validated;
-
 import com.vinicius.ProjetoCadastro.models.Usuario;
 import com.vinicius.ProjetoCadastro.repository.UsuariosRepository;
 import org.springframework.web.bind.annotation.RequestMapping;
